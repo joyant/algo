@@ -22,10 +22,6 @@ The main goal of the Algo repository is to track my progress as I delve into alg
 
 To use this repository, simply clone it to your local machine. You can then navigate through the directories to explore the problems and solutions at your own pace.
 
----
-
 Thank you for visiting the Algo repository. Happy coding!
-
----
 
 Note: This README and the repository's content are subject to change as I continue to learn and grow in my algorithmic journey.
