@@ -17,6 +17,7 @@ leetcode: 28 找出字符串中第一个匹配项的下标
 解释："leeto" 没有在 "leetcode" 中出现，所以返回 -1 。
 */
 // 逐个字符比较
+// i 和 j 其实是两个指针，i 的长度限制是hLen-nLen，而 j 的限制是 nLen
 func strStr(haystack string, needle string) int {
     hLen := len(haystack)
     nLen := len(needle)

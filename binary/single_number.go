@@ -15,7 +15,7 @@ package binary
 3. 异或运算满足交换律和结合律，即 (a ^ b ^ a = a ^ a ^ b = 0 ^ b = b)
 */
 
-// 解题的时候，可以举个例子，比 1,2,2 就知道了
+// 解题的时候，可以举个例子，比如 1,2,2 就知道了
 func singleNumber(nums []int) int {
     var result = 0
     for _, num := range nums {

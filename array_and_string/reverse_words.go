@@ -32,8 +32,8 @@ leetcode: 151 反转字符串中的单词
 func reverseWords(s string) string {
     n := len(s)
     var result []byte
+    // index是一个完整单词的开始位置，比如它是 good 的 d 的位置
     var index = -1
-    var firstTimeNotSpace = true
 
     for i := n - 1; i >= 0; i-- {
         if s[i] == ' ' {
@@ -43,16 +43,12 @@ func reverseWords(s string) string {
                 }
                 result = append(result, s[i+1:index+1]...)
             }
-            firstTimeNotSpace = true
             index = -1
-        } else {
-            if firstTimeNotSpace {
-                index = i
-            }
-            firstTimeNotSpace = false
+        } else if index == -1 {
+            index = i
         }
     }
-    if index > -1 && s[0] != ' ' {
+    if s[0] != ' ' && index > -1 {
         if len(result) > 0 {
             result = append(result, ' ')
         }
