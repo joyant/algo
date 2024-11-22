@@ -1,0 +1,6 @@
+{
+  "multi_match": {
+    "query": "Quick brown fox",
+    "fields": ["*_title", "chapter_title^2"]
+  }
+}

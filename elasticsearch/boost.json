@@ -1,0 +1,32 @@
+{
+  "query": {
+    "bool": {
+      "must": {
+        "match": {
+          "content": {
+            "query": "full text search",
+            "operator": "and"
+          }
+        }
+      },
+      "should": [
+        {
+          "match": {
+            "content": {
+              "query": "elasticsearch",
+              "boost": 3
+            }
+          }
+        },
+        {
+          "match": {
+            "content": {
+              "query": "lucene",
+              "boost": 2
+            }
+          }
+        }
+      ]
+    }
+  }
+}

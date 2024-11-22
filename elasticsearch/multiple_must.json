@@ -1,0 +1,14 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "term": { "price": 20 } },
+        { "term": { "productID": "XHDK-A-1293-#fJ3" } }
+      ],
+      "must_not": [
+        { "term": { "price": 30 } },
+        { "term": { "productID": "KDKE-B-9947-#kL5" } }
+      ]
+    }
+  }
+}

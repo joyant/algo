@@ -1,0 +1,14 @@
+{
+  "query": {
+    "constant_score": {
+      "filter": {
+        "bool": {
+          "must": [
+            {"term": {"tags": "search"}},
+            {"term": {"tag_count": 1}}
+          ]
+        }
+      }
+    }
+  }
+}

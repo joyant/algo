@@ -1,0 +1,14 @@
+{
+  "query": {
+    "constant_score": {
+      "filter": {
+        "range": {
+          "price": {
+            "gte": 20,
+            "lt": 40
+          }
+        }
+      }
+    }
+  }
+}

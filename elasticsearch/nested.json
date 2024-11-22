@@ -1,0 +1,15 @@
+{
+  "query": {
+    "nested": {
+      "path": "user",
+      "query": {
+        "bool": {
+          "must": [
+            {"match": {"user.first": "Alice"}},
+            {"match": {"user.address": "London"}}
+          ]
+        }
+      }
+    }
+  }
+}

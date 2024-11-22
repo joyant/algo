@@ -1,0 +1,26 @@
+{
+  "query": {
+    "constant_score": {
+      "filter": {
+        "bool": {
+          "should": [
+            { "bool": {
+              "must": [
+                { "term": { "folder": "inbox" }},
+                { "term": { "read": false }}
+              ]
+            }},
+            { "bool": {
+              "must_not": {
+                "term": { "folder": "inbox" }
+              },
+              "must": {
+                "term": { "important": true }
+              }
+            }}
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "size": 1,
+  "aggs": {
+    "colors": {
+      "terms": {
+        "field": "color"
+      },
+      "aggs": {
+        "avg_price": {
+          "avg": {
+            "field": "price"
+          }
+        },
+        "make": {
+          "terms": {
+            "field": "make"
+          }
+        }
+      }
+    }
+  }
+}

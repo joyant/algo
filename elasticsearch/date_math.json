@@ -1,0 +1,11 @@
+{
+  "query": {
+    "filter": {
+      "range": {
+        "timestamp": {
+          "gt": "now-1h"
+        }
+      }
+    }
+  }
+}

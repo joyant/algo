@@ -1,0 +1,10 @@
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "quick brown dog",
+        "minimum_should_match": "75%"
+      }
+    }
+  }
+}

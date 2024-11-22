@@ -1,0 +1,10 @@
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "a b",
+        "operator": "and"
+      }
+    }
+  }
+}
