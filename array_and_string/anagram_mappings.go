@@ -11,8 +11,6 @@ level: easy
 
 数组 a 是数组 b 的一个 变位词 意味着 b 是通过将 a 中元素的顺序随机打乱生成的。
 
-
-
 示例 1：
 
 输入：nums1 = [12,28,46,32,50], nums2 = [50,12,32,46,28]
@@ -27,13 +25,13 @@ level: easy
 
 // 能读懂题就能写出来
 func anagramMappings(nums1 []int, nums2 []int) []int {
-    m := map[int]int{}
-    for idx, num := range nums2 {
-        m[num] = idx
-    }
-    res := make([]int, 0, len(nums1))
-    for _, num := range nums1 {
-        res = append(res, m[num])
-    }
-    return res
+	m := map[int]int{}
+	for idx, num := range nums2 {
+		m[num] = idx
+	}
+	res := make([]int, 0, len(nums1))
+	for _, num := range nums1 {
+		res = append(res, m[num])
+	}
+	return res
 }

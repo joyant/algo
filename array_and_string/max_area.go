@@ -15,17 +15,18 @@ leetcode:11 盛最多水的容器
 // 这是一个双指针问题
 // 本质上是求两边的墙组成和矩形面积
 func maxArea(height []int) int {
-    n := len(height)
-    i, j := 0, n-1
-    var result int
-    for i < j {
-        result = max(result, min(height[i], height[j])*(j-i))
-        // 尽量让指针在高的墙这里停留时间长一点
-        if height[i] < height[j] {
-            i++
-        } else {
-            j--
-        }
-    }
-    return result
+	n := len(height)
+	i, j := 0, n-1
+	var result int
+	for i < j {
+		area := min(height[i], height[j]) * (j - i)
+		result = max(result, area)
+		// 尽量让指针在高的墙这里停留时间长一点
+		if height[i] < height[j] {
+			i++
+		} else {
+			j--
+		}
+	}
+	return result
 }
