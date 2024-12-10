@@ -20,36 +20,36 @@ L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
 // 据说这是经常出现的经典面试题，可能是因为这一个题包含了3个知识点，这3个点都是链表的常见操作
 // 所以可以说一题顶三道题
 func reorderList(head *ListNode) {
-    if head == nil || head.Next == nil {
-        return
-    }
-    // 1. 找中间节点
-    slow, fast := head, head
-    for fast != nil && fast.Next != nil {
-        slow = slow.Next
-        fast = fast.Next.Next
-    }
-    // 现在 slow 是前半部分的最后一个节点，slow.Next 指向下半部分的第一个节点
-    lowerPart := slow.Next
-    slow.Next = nil
-    // 反转后半链表
-    var prev *ListNode
-    cur := lowerPart
-    for cur != nil {
-        next := cur.Next
-        cur.Next = prev
-        prev = cur
-        cur = next
-    }
-    // 反转之后的链表第一个节点是 prev
-    // 合并
-    first, second := head, prev
-    for second != nil {
-        fNext := first.Next
-        sNext := second.Next
-        first.Next = second
-        second.Next = fNext
-        first = fNext
-        second = sNext
-    }
+	if head == nil || head.Next == nil {
+		return
+	}
+	// 1. 找中间节点
+	slow, fast := head, head
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	// 现在 slow 是前半部分的最后一个节点，slow.Next 指向下半部分的第一个节点
+	lowerPart := slow.Next
+	slow.Next = nil
+	// 反转后半链表
+	var prev *ListNode
+	cur := lowerPart
+	for cur != nil {
+		next := cur.Next
+		cur.Next = prev
+		prev = cur
+		cur = next
+	}
+	// 反转之后的链表第一个节点是 prev
+	// 合并
+	first, second := head, prev
+	for second != nil {
+		fNext := first.Next
+		sNext := second.Next
+		first.Next = second
+		second.Next = fNext
+		first = fNext
+		second = sNext
+	}
 }
