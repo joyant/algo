@@ -8,41 +8,41 @@ level: medium
 
 // 如何用笔自然的在纸上画出矩阵，就如何按顺序填充，多做就熟悉了，没有技术含量，纯粹炫技
 func generateMatrix(n int) [][]int {
-    // 初始化 matrix
-    matrix := make([][]int, n)
-    for i := 0; i < n; i++ {
-        matrix[i] = make([]int, n)
-    }
-    counter := 1
-    // 填充，按 counter 递增的方向填充
-    left, right, top, bottom := 0, n-1, 0, n-1
-    // left right 对应 j，是横向
-    // top bottom 对应 i，是竖向
-    for left <= right && top <= bottom {
-        // 填充上边
-        for idx := left; idx <= right; idx++ {
-            matrix[top][idx] = counter
-            counter++
-        }
-        top++
-        // 填充右边
-        for idx := top; idx <= bottom; idx++ {
-            matrix[idx][right] = counter
-            counter++
-        }
-        right--
-        // 填充下边
-        for idx := right; idx >= left; idx-- {
-            matrix[bottom][idx] = counter
-            counter++
-        }
-        bottom--
-        // 填充左边
-        for idx := bottom; idx >= top; idx-- {
-            matrix[idx][left] = counter
-            counter++
-        }
-        left++
-    }
-    return matrix
+	// 初始化 matrix
+	matrix := make([][]int, n)
+	for i := 0; i < n; i++ {
+		matrix[i] = make([]int, n)
+	}
+	counter := 1
+	// 填充，按 counter 递增的方向填充
+	left, right, top, bottom := 0, n-1, 0, n-1
+	// left right 对应 j，是横向
+	// top bottom 对应 i，是竖向
+	for left <= right && top <= bottom {
+		// 填充上边
+		for idx := left; idx <= right; idx++ {
+			matrix[top][idx] = counter
+			counter++
+		}
+		top++
+		// 填充右边
+		for idx := top; idx <= bottom; idx++ {
+			matrix[idx][right] = counter
+			counter++
+		}
+		right--
+		// 填充下边
+		for idx := right; idx >= left; idx-- {
+			matrix[bottom][idx] = counter
+			counter++
+		}
+		bottom--
+		// 填充左边
+		for idx := bottom; idx >= top; idx-- {
+			matrix[idx][left] = counter
+			counter++
+		}
+		left++
+	}
+	return matrix
 }
