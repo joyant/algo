@@ -14,10 +14,10 @@ level: easy
 */
 
 func xorOperation(n int, start int) int {
-    // 任意数与0异或运算的结果都是任意数自己
-    var ans int
-    for i := 0; i < n; i++ {
-        ans ^= start + i*2
-    }
-    return ans
+	// 任意数与0异或运算的结果都是任意数自己
+	var ans int
+	for i := 0; i < n; i++ {
+		ans ^= start + i*2
+	}
+	return ans
 }
