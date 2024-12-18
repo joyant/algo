@@ -7,29 +7,29 @@ level: easy
 */
 
 type levelData struct {
-    sum, count int
+	sum, count int
 }
 
 func averageOfLevels(root *TreeNode) []float64 {
-    var levelValues []levelData
-    var dfs func(*TreeNode, int)
-    dfs = func(root *TreeNode, level int) {
-        if root == nil {
-            return
-        }
-        if level < len(levelValues) {
-            levelValues[level].sum += root.Val
-            levelValues[level].count++
-        } else {
-            levelValues = append(levelValues, levelData{sum: root.Val, count: 1})
-        }
-        dfs(root.Left, level+1)
-        dfs(root.Right, level+1)
-    }
-    dfs(root, 0)
-    res := make([]float64, 0, len(levelValues))
-    for _, v := range levelValues {
-        res = append(res, float64(v.sum)/float64(v.count))
-    }
-    return res
+	var levelValues []levelData
+	var dfs func(*TreeNode, int)
+	dfs = func(root *TreeNode, level int) {
+		if root == nil {
+			return
+		}
+		if level < len(levelValues) {
+			levelValues[level].sum += root.Val
+			levelValues[level].count++
+		} else {
+			levelValues = append(levelValues, levelData{sum: root.Val, count: 1})
+		}
+		dfs(root.Left, level+1)
+		dfs(root.Right, level+1)
+	}
+	dfs(root, 0)
+	res := make([]float64, 0, len(levelValues))
+	for _, v := range levelValues {
+		res = append(res, float64(v.sum)/float64(v.count))
+	}
+	return res
 }
