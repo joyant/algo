@@ -30,16 +30,16 @@ word2：    p   q
 */
 
 func mergeAlternately(word1 string, word2 string) string {
-    m, n := len(word1), len(word2)
-    res := make([]byte, 0, m+n)
-    for i := 0; i < n || i < m; i++ {
-        // 按题目要求，合并的时候，word1的字母在前
-        if i < m {
-            res = append(res, word1[i])
-        }
-        if i < n {
-            res = append(res, word2[i])
-        }
-    }
-    return string(res)
+	m, n := len(word1), len(word2)
+	res := make([]byte, 0, m+n)
+	for i := 0; i < n || i < m; i++ {
+		// 按题目要求，合并的时候，word1的字母在前
+		if i < m {
+			res = append(res, word1[i])
+		}
+		if i < n {
+			res = append(res, word2[i])
+		}
+	}
+	return string(res)
 }
